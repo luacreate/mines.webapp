@@ -134,19 +134,19 @@
         h1 {
             color: white;
             font-size: 32px;
-            margin: 0; /* Удалён отступ */
+            margin: 0;
         }
 
         .username {
             color: white;
             font-size: 16px;
-            margin: 0; /* Удалён отступ */
-            margin-top: -5px; /* Уменьшен отступ сверху для поднятия юзернейма */
+            margin: 0;
+            margin-top: -5px;
         }
 
         .header {
-            text-align: center; /* Центрирование заголовка и юзернейма */
-            margin-bottom: 20px; /* Отступ снизу */
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 600px) {
@@ -197,9 +197,8 @@
     let currentStars = [];
     let mode = 1;
     const modeValueDisplay = document.getElementById('modeValue');
-    let isShowingSignal = false; // Переменная для отслеживания состояния
+    let isShowingSignal = false;
 
-    // Создание квадратов на поле
     for (let i = 0; i < 25; i++) {
         const square = document.createElement('div');
         square.className = 'square';
@@ -207,7 +206,6 @@
         squares.push(square);
     }
 
-    // Создание плавающих точек
     for (let i = 0; i < 30; i++) {
         const dot = document.createElement('div');
         dot.className = 'floating-dot';
@@ -216,10 +214,9 @@
         document.body.appendChild(dot);
     }
 
-    // Функция показа звезд по одной
     async function showStars() {
-        if (isShowingSignal) return; // Если сигнал уже показывается, выходим из функции
-        isShowingSignal = true; // Устанавливаем флаг, что сигнал показывается
+        if (isShowingSignal) return;
+        isShowingSignal = true;
 
         currentStars.forEach(star => star.remove());
         currentStars = [];
@@ -260,7 +257,7 @@
             currentStars.push(star);
         }
 
-        isShowingSignal = false; // Сбрасываем флаг, когда процесс завершен
+        isShowingSignal = false;
     }
 
     document.getElementById('signalButton').addEventListener('click', showStars);
